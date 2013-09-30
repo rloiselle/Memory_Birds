@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+	<title>Memory</title>
+	<!-- <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet"> -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Bird Song Memory!</h1>
+		<div class='navbar navbar-inverse'>
+	      <div class='navbar-inner nav-collapse' style="height: auto;">
+	        <ul class="nav">
+	          <li class="active"><a href="#">Home</a></li>
+	          <li><a href="#">Browse Birds</a></li>
+	          <li><a href="#">Treasure Map</a></li>
+	          <li><a href="#">Pop Quiz</a></li>
+	          <li><a href="Your Profile"></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	    <div id='content' class='row-fluid'>
+	      <div class='span9 main'>
+	        <div class=" center pagination-centered">
+	        	<h2>Find the matching bird song to reveal pictures and gain points!</h2>
+	        </div>
+			    <br>
+			    <div id="gameBox" class="center pagination-centered">
+			      <div>
+			          <div id="btn1" class="cell" data-row="1" data-col="1">1_1</div>
+			          <div id="btn2" class="cell" data-row="1" data-col="2">1_2</div>
+			          <div id="btn3" class="cell" data-row="1" data-col="3">1_3</div>
+  			        <div id="btn4" class="cell" data-row="1" data-col="4">1_4</div>
+			      </div>
+			      <div>
+			          <div id="btn5" class="cell" data-row="2" data-col="1">2_1</div>
+			          <div id="btn6" class="cell" data-row="2" data-col="2">2_2</div>
+			          <div id="btn7" class="cell" data-row="2" data-col="3">2_3</div>
+			          <div id="btn8" class="cell" data-row="2" data-col="4">2_4</div>
+			      </div>
+			      <div>
+			          <div id="btn9" class="cell" data-row="3" data-col="1">3_1</div>
+			          <div id="btn10" class="cell" data-row="3" data-col="2">3_2</div>
+			          <div id="btn11" class="cell" data-row="3" data-col="3">3_3</div>
+			         	<div id="btn12" class="cell" data-row="3" data-col="4">3_4</div>
+			      </div>
+			      <div>
+			          <div id="btn13" class="cell" data-row="4" data-col="1">4_1</div>
+			          <div id="btn14" class="cell" data-row="4" data-col="2">4_2</div>
+			          <div id="btn15" class="cell" data-row="4" data-col="3">4_3</div>
+			         	<div id="btn16" class="cell" data-row="4" data-col="4">4_4</div>
+			      </div>
+			     </div>
+			    <br>
+			    <br>
+			    <div class="row span9"><button id="wipe">reset the game!</button></div>
+	      </div>
+
+	      <div class='span3 sidebar'>
+	        <h2>Status</h2>
+	        <ul class="nav nav-tabs nav-stacked">
+		    	<li><a href='#'>Ecosystem</a></li>
+		    	<li><a href='#'>Points = #birds found</a></li>
+		    	<li><a href='#'>Random Facts</a></li>
+		  	</ul>
+	      </div>
+		</div>
+
+
+	</div>
+
+	  <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- include SM2 library (see builds for optimized versions) -->
+    <script type="text/javascript" src="js/soundmanager2.js"></script>
+
+    <!-- configure SM2 for your use -->
+   <script type="text/javascript" src="js/app.js"></script>
+   <script type="text/javascript" src="js/index.js"></script>
+
+
+</body>
+</html>
