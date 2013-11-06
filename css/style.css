@@ -10,6 +10,7 @@ background-color: #CCC;
   padding: 5px 5px 5px 5px;
   margin: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
+  /*position: absolute;*/
 }
 
 .blue {
@@ -22,4 +23,41 @@ background-color: #CCC;
   margin-right:auto;
   width: 75%;
   text-align: center;
+}
+
+.quickflip-wrapper {
+  position: relative;
+    height: 216px;
+    width: 322px;
+}
+
+.quickFlipCta {
+  position: absolute;
+  bottom: 30px;
+  left: 65px;
+  width: 210px;
+  font-size: 15px;
+  outline: none;
+}
+
+#btn1_bk {
+  background-image: url('./img/dfc_wagon.png');
+  display: none;
+}
+
+#container{
+    width:400px;
+    margin:0px auto;
+    height:380px;
+    margin-top:50px}
+#image1{
+    position:absolute;
+    cursor:pointer;
+    width:300px;
+    height:190px;
+}
+#image2{
+    display:none;
+    position:absolute;
+    cursor:pointer;
 }

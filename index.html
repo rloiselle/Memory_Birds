@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<title>Memory</title>
+
 	<!-- <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet"> -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -28,28 +29,40 @@
 			    <br>
 			    <div id="gameBox" class="center pagination-centered">
 			      <div>
-			          <div id="btn1" class="cell" data-row="1" data-col="1">1_1</div>
-			          <div id="btn2" class="cell" data-row="1" data-col="2">1_2</div>
-			          <div id="btn3" class="cell" data-row="1" data-col="3">1_3</div>
-  			        <div id="btn4" class="cell" data-row="1" data-col="4">1_4</div>
+			      		<div class="quickflip-wrapper">
+			          	<div id="btn1_bk" class="cell"><h3 class="quickFlipCta">bird picture here</h3></div>
+			          	<div id="btn1_ft" class="cell" data-row="1" data-col="1" data-pos="0"><h3 class="quickFlipCta">1_1</h3></div>
+			          </div>
+			      		<div class="quickflip-wrapper">
+			      			<div<div id="btn2_bk" class="cell quickFlipCta">bird picture here</div>
+				          <div id="btn2_ft" class="cell quickFlipCta" data-row="1" data-col="2" data-pos="1">1_2</div>
+				        </div>
+				        <div class="quickflip-wrapper">
+				        	<div id="btn3_bk" class="cell quickFlipCta">bird picture here</div>
+			          	<div id="btn3_ft" class="cell quickFlipCta" data-row="1" data-col="3" data-pos="2">1_3</div>
+  			        </div>
+  			       	<div class="quickflip-wrapper">
+  			        	<div id="btn4_bk" class="cell quickFlipCta">bird picture here</div>
+  			        	<div id="btn4_ft" class="cell quickFlipCta" data-row="1" data-col="4" data-pos="3">1_4</div>
+  			        </div>
 			      </div>
 			      <div>
-			          <div id="btn5" class="cell" data-row="2" data-col="1">2_1</div>
-			          <div id="btn6" class="cell" data-row="2" data-col="2">2_2</div>
-			          <div id="btn7" class="cell" data-row="2" data-col="3">2_3</div>
-			          <div id="btn8" class="cell" data-row="2" data-col="4">2_4</div>
+			          <div id="btn5" class="cell quickFlipCta" data-row="2" data-col="1" data-pos="4">2_1</div>
+			          <div id="btn6" class="cell quickFlipCta" data-row="2" data-col="2" data-pos="5">2_2</div>
+			          <div id="btn7" class="cell quickFlipCta" data-row="2" data-col="3" data-pos="6">2_3</div>
+			          <div id="btn8" class="cell quickFlipCta" data-row="2" data-col="4" data-pos="7">2_4</div>
 			      </div>
 			      <div>
-			          <div id="btn9" class="cell" data-row="3" data-col="1">3_1</div>
-			          <div id="btn10" class="cell" data-row="3" data-col="2">3_2</div>
-			          <div id="btn11" class="cell" data-row="3" data-col="3">3_3</div>
-			         	<div id="btn12" class="cell" data-row="3" data-col="4">3_4</div>
+			          <div id="btn9" class="cell quickFlipCta" data-row="3" data-col="1" data-pos="8">3_1</div>
+			          <div id="btn10" class="cell quickFlipCta" data-row="3" data-col="2" data-pos="9">3_2</div>
+			          <div id="btn11" class="cell quickFlipCta" data-row="3" data-col="3" data-pos="10">3_3</div>
+			         	<div id="btn12" class="cell quickFlipCta" data-row="3" data-col="4" data-pos="11">3_4</div>
 			      </div>
 			      <div>
-			          <div id="btn13" class="cell" data-row="4" data-col="1">4_1</div>
-			          <div id="btn14" class="cell" data-row="4" data-col="2">4_2</div>
-			          <div id="btn15" class="cell" data-row="4" data-col="3">4_3</div>
-			         	<div id="btn16" class="cell" data-row="4" data-col="4">4_4</div>
+			          <div id="btn13" class="cell quickFlipCta" data-row="4" data-col="1" data-pos="12">4_1</div>
+			          <div id="btn14" class="cell quickFlipCta" data-row="4" data-col="2" data-pos="13">4_2</div>
+			          <div id="btn15" class="cell quickFlipCta" data-row="4" data-col="3" data-pos="14">4_3</div>
+			         	<div id="btn16" class="cell quickFlipCta" data-row="4" data-col="4" data-pos="15">4_4</div>
 			      </div>
 			     </div>
 			    <br>
@@ -75,8 +88,10 @@
 
     <!-- include SM2 library (see builds for optimized versions) -->
     <script type="text/javascript" src="js/soundmanager2.js"></script>
+   	<script type="text/javascript" src ="js/jquery.quickflip.source.js"></script>
 
     <!-- configure SM2 for your use -->
+
    <script type="text/javascript" src="js/app.js"></script>
    <script type="text/javascript" src="js/index.js"></script>
 

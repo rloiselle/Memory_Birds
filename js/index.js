@@ -1,5 +1,23 @@
 $(document).ready(function() {
 
+// $('.cell').bind('click', function(){
+//   // var picture =
+//   $(".flipbox").flippy({
+//     color_target: "red",
+//     duration: "500",
+//     verso: 'Hello'
+//   });
+
+// });
+
+// $('.cell').bind('dblclick', function(){
+//   $('.flipbox').flippyReverse();
+// });
+
+// $(function() {
+//     $('.quickflip-wrapper').quickFlip();
+// });
+
 // Total number of tiles available in game
   // var cellCt = $('.cell').length;
 // number of bird songs required to fill tiles
@@ -7,11 +25,11 @@ $(document).ready(function() {
   // var songs = {};
 
 // toggles cell color when clicked and also calls a function
-  $('.cell').bind('click', function() {
-      $(this).toggleClass("blue");
-       // hugNeighbors($(this));
-       soundManager.togglePause('Sturnella_neglecta');
-  });
+  // $('.cell').bind('click', function() {
+  //     $(this).toggleClass("blue");
+  //      // hugNeighbors($(this));
+  //      soundManager.togglePause('Sturnella_neglecta');
+  // });
 
   // $('.cell').bind('click', function() {
   //   soundManager.play('WesternMeadowlark');
@@ -41,67 +59,57 @@ $(document).ready(function() {
     $("div.cell[data-row=" + (rownum - 1) + "][data-col=" + (colnum) + "]").toggleClass("blue");
   };
 
-  // $('#gameBox').data({name:["Piranga_ludoviciana","Sialia_currucoides","Spinus_tristis","Sturnella_neglecta"], count:[0,0,0,0]});
-  $('#gameBox').data({name:[], count:[]});
-  // console.log($('gameBox').data());
-  // $('gameBox').data("name").push(rand);
-  var birdAry=[];
-  var birdHash={};
-  var songs = ["Piranga_ludoviciana", "Sialia_currucoides", "Spinus_tristis", "Sturnella_neglecta"];
-  var rand = songs[Math.floor(Math.random() * songs.length)];
-  birdAry.push(rand);
-  console.log(birdAry);
+  // Array of options for the the gameboard
+  var songsAll = ["Piranga_ludoviciana", "Sialia_currucoides", "Spinus_tristis", "Sturnella_neglecta","a","b","c","d"];
 
-  // birdHash.Piranga_ludoviciana=undefined;
-  // ct=1;
-  // if(birdHash.Piranga_ludoviciana===undefined){
-  //   birdHash.Piranga_ludoviciana = 1;
-  // } else if{
-  //     console.log("false");
-  //   }
+// create array 1:length of game tiles
+  var positionList = [];
+  for (var pos = 1; pos <= $('.cell').length; pos++) {
+      positionList.push(pos);
+  }
 
+  var fillOrder = [];
 
-  $('.cell').map(function() {
-    // var songs = {Pl:0,Sc:0,St:0,Sn:0};
-    var songs = ["Piranga_ludoviciana", "Sialia_currucoides", "Spinus_tristis", "Sturnella_neglecta"];
-    var rand = songs[Math.floor(Math.random() * songs.length)];
-    // $(this).data({name:rand, url:"_mp3/filename.mp3"});
+// randomly select from array list without replacement
+  var randSelect = function(ary){
+    // This gets numbers between 1=>x<=16
+    var ind = Math.floor(Math.random() * ary.length);
+    fillOrder.push(ary[ind]);
+    return ary.splice(ind, 1)[0];
+  };
 
-    if(birdHash[rand]===undefined){
-      birdHash[rand] = 1;
-      $(this).data({name:rand, url:"_mp3/filename.mp3"});
-    } else if(birdHash[rand]<=2){
-      birdHash[rand]=birdHash[rand]+1;
-      $(this).data({name:rand, url:"_mp3/filename.mp3"});
-    } else {
-      var rand = songs[Math.floor(Math.random() * songs.length)];
-      break;
+  var assignSound = function(){
+    songs = songsAll.concat(songsAll);
+    console.log(songs);
+    $('.cell').map(function() {
+      for(ind=0; ind<fillOrder.length; ind++){
+        if(ind === $(this).data("pos") & $(this).data("name")===undefined) {
+          // subtract one from the index in order to cover the index range of songs array
+          $(this).data({name:songs[fillOrder[ind]-1], url:"_mp3/filename.mp3"});
+        }
+      }
+    });
+  };
+
+// function allows repeated calls to function
+// a function passed into another function as a parameter must be stored as a variable OR
+// use the name without the () after it. Otherwise the function will be immediately evaluated
+  var repeatFxnCall = function(num, fxn, par){
+    for(var i=0; i<num; i++) {
+      fxn(par);
     }
+  };
 
+  repeatFxnCall(16, randSelect, positionList);
+  assignSound();
 
-    console.log($(this).data());
+  // console.log(fillOrder,fillOrder.length);
+  // console.log(positionList);
 
-    // for(var i=0, max=$('#gameBox').data("name").length; i<max; i++) {
-    //   // if($('#gameBox').data("name")[rand] === rand) {
-    //   console.log($('#gameBox').data("name")[i]===rand);
-    //   console.log($('#gameBox').data("name")[i]);
-    // }
-
-  });
-
-  // console.log(namAry);
-  console.log(birdHash);
-
-  // $('#gameBox').data("name").map(function(){
-  // for(var i=0, max=$('#gameBox').data("name").length; i<max; i++) {
-    // if($('#gameBox').data("name")[rand] === rand) {
-   // console.log($('#gameBox').data("name")[i]);
-    // }
-  // }
+  // $('.cell').map(function() {
+  //   console.log($(this).data("pos"),$(this).data("name"));
   // });
 
-var assignSound = function(){
 
-};
 
 });
